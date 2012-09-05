@@ -1,7 +1,6 @@
 function loadFans(userNameInput){
   $.ajax({
-    url: "http://weiboapp.twksos.com/followers_ids.php?name=" + $(userNameInput).val(),
-    async: false
+    url: "http://weiboapp.twksos.com/followers_ids.php?name=" + $(userNameInput).val()
   }).done(function(data) {
     fans = JSON.parse(data);
     if(fans.error){
