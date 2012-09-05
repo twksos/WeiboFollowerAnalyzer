@@ -17,50 +17,14 @@ $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
 
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src="underscore.js"></script>
-<script>
-function loadFans(userNameInput){
-  $.ajax({
-    url: "http://weiboapp.twksos.com/followers_ids.php?name=" + $(userNameInput).val(),
-    async: false
-  }).done(function(data) {
-    fans = JSON.parse(data);
-    console.log(fans);
-    if(fans.error){
-      alert('错误：'+fans.error);
-    }
-    if(fans.next_cursor == 0){
-      $(userNameInput).attr('data-fans',data);
-      calcIntersection();
-    }else {
-      alert('暂不支持5000粉丝以上的用户。');
-    }
-  });
-}
-function calcIntersection(){
-    var user0Ids = JSON.parse($('#user-0-name').attr('data-fans')).ids;
-    var user1Ids = JSON.parse($('#user-1-name').attr('data-fans')).ids;
-    var intersection = _.intersection(user0Ids, user1Ids);
-    $('#user-0-fans').text(user0Ids.length)
-    $('#user-1-fans').text(user1Ids.length)
-    $('#common-fans').text(intersection.length)
-    $('#common-fans-user-0-percentage').text(intersection.length/user0Ids.length)
-    $('#common-fans-user-1-percentage').text(intersection.length/user1Ids.length)
-}
-$(function (){
-  _.after(1, calcIntersection);
-  $('#load').click(function(){
-    loadFans('#user-0-name');
-    loadFans('#user-1-name');
-  });
-});
-</script>
+<script type="text/javascript" src="samefans.js"></script>
 </head>
 
 <body>
 <?php
 if($_SESSION['token']){
 ?>
-  <form>
+  <form action="">
     <section>
       <input id='user-name-0' type="text" />
       <label>对比的用户名</label>
@@ -69,7 +33,7 @@ if($_SESSION['token']){
       <input id='user-name-1' type="text" />
       <label>对比的用户名</label>
     </section>
-    <button id='load'>load</button>
+    <button id='load' type="button">load</button>
   </form>
   <div id='content'>
     <section><label>用户的粉丝数量</label><span id="user-0-fans"></span></section>
