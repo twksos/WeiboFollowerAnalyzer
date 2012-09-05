@@ -30,6 +30,8 @@ function calcIntersection(){
     $('#content').css('display','block');
 }
 $(function (){
+  $('#user-0-name').watermark('在此填入用户名');
+  $('#user-1-name').watermark('在此填入用户名');
   _.after(1, calcIntersection);
   $('#load').click(function(e){
     $('.user-0-name').text($('#user-0-name').val());

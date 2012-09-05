@@ -16,6 +16,7 @@ $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
 <title>Engine</title>
 <link href='style.css' rel='stylesheet' type='text/css' />
 <script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.watermark.min.js"></script>
 <script type="text/javascript" src="underscore.js"></script>
 <script type="text/javascript" src="samefans.js"></script>
 </head>
