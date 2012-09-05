@@ -13,20 +13,17 @@
   <form action=''>
     <section>
       <input id='user-0-name' type="text" />
-      <label>对比的用户名</label>
-    </section>
-    <section>
+      <p>VS</p>
       <input id='user-1-name' type="text" />
-      <label>对比的用户名</label>
     </section>
     <button id='load' type='button'>load</button>
   </form>
   <div id='content'>
-    <section><label>用户的粉丝数量</label><span id="user-0-fans"></span></section>
-    <section><label>用户的粉丝数量</label><span id="user-1-fans"></span></section>
+    <section><label><span class='user-0-name' />的粉丝数量：</label><span id="user-0-fans"></span></section>
+    <section><label><span class='user-1-name' />的粉丝数量：</label><span id="user-1-fans"></span></section>
     <section><label>共同粉丝数量</label><span id="common-fans"></span></section>
-    <section><label>共同粉丝数量占用户粉丝百分比</label><span id="common-fans-user-0-percentage"></span></section>
-    <section><label>共同粉丝数量占用户粉丝百分比</label><span id="common-fans-user-1-percentage"></span></section>
+    <section><label>共同粉丝数量占<span class='user-0-name' />粉丝百分比</label><span id="common-fans-user-0-percentage"></span></section>
+    <section><label>共同粉丝数量占<span class='user-1-name' />粉丝百分比</label><span id="common-fans-user-1-percentage"></span></section>
   </div>
 </body>
 </html>
