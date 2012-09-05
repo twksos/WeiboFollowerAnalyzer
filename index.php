@@ -24,16 +24,16 @@ $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
 <?php
 if($_SESSION['token']){
 ?>
-  <form action="">
+  <form action=''>
     <section>
-      <input id='user-name-0' type="text" />
+      <input id='user-0-name' type="text" />
       <label>对比的用户名</label>
     </section>
     <section>
-      <input id='user-name-1' type="text" />
+      <input id='user-1-name' type="text" />
       <label>对比的用户名</label>
     </section>
-    <button id='load' type="button">load</button>
+    <button id='load'>load</button>
   </form>
   <div id='content'>
     <section><label>用户的粉丝数量</label><span id="user-0-fans"></span></section>
