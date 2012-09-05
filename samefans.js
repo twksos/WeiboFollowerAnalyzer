@@ -27,6 +27,7 @@ function calcIntersection(){
     $('#common-fans').text(intersection.length);
     $('#common-fans-user-0-percentage').text(percentage(intersection.length/user0Ids.length));
     $('#common-fans-user-1-percentage').text(percentage(intersection.length/user1Ids.length));
+    $('#content').css('display','block');
 }
 $(function (){
   _.after(1, calcIntersection);
