@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Engine</title>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="underscore.js"></script>
+<script>
+function loadFans(userNameInput){
+  $.ajax({
+    url: "http://weiboapp.twksos.com/followers_ids.php?name=" + $(userNameInput).val(),
+  }).done(function(data) {
+    console.log(data);
+    fans = JSON.parse(data);
+    if(fans.next_cursor == 0){
+      $(userNameInput).attr('data-fans',fans);
+    }else {
+      alert('暂不支持5000粉丝以上的用户。');
+    }
+  });
+}
+$(function (){
+  $('#load').click(function(){
+    loadFans('#user-name-0');
+    loadFans('#user-name-1');
+  });
+});
+</script>
+</head>
+
+<body>
+  <form>
+    <section>
+      <input id='user-name-0' type="text" />
+      <label>对比的用户名</label>
+    </section>
+    <section>
+      <input id='user-name-1' type="text" />
+      <label>对比的用户名</label>
+    </section>
+    <button id='load'>load</button>
+  </form>
+  <div id='content'>
+    <section><label>用户的粉丝数量</label></section>
+    <section><label>用户的粉丝数量</label></section>
+    <section><label>共同粉丝数量</label></section>
+    <section><label>共同粉丝数量占用户粉丝百分比</label></section>
+    <section><label>共同粉丝数量占用户粉丝百分比</label></section>
+  </div>
+</body>
+</html>
