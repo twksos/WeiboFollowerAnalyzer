@@ -33,7 +33,7 @@ if($_SESSION['token']){
       <input id='user-1-name' type="text" />
       <label>对比的用户名</label>
     </section>
-    <button id='load'>load</button>
+    <button id='load' type='button'>load</button>
   </form>
   <div id='content'>
     <section><label>用户的粉丝数量</label><span id="user-0-fans"></span></section>
