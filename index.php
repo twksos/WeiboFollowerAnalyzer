@@ -30,7 +30,7 @@ if($_SESSION['token']){
       <p>VS</p>
       <input id='user-1-name' type="text" />
     </section>
-    <button id='load' type='button'>load</button>
+    <button id='load' type='button'>比较共同粉丝</button>
   </form>
   <div id='content'>
     <section><label><span class='user-0-name'></span>的粉丝数量：</label><span id="user-0-fans"></span></section>
