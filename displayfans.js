@@ -2,6 +2,7 @@ function percentage(n){
   return (n*100).toFixed(2)+"%";
 } 
 function calcIntersection(){
+  if($('#user-0-name').attr('data-fans') && $('#user-1-name').attr('data-fans')){
     var user0Ids = JSON.parse($('#user-0-name').attr('data-fans')).ids;
     var user1Ids = JSON.parse($('#user-1-name').attr('data-fans')).ids;
     var intersection = _.intersection(user0Ids, user1Ids);
@@ -12,13 +13,13 @@ function calcIntersection(){
     $('#common-fans-user-1-percentage').text(percentage(intersection.length/user1Ids.length));
     $('#content').css('display','block');
     $('#loading').css('display','none');
+  }
 }
 
 $(function (){
   $('#user-0-name').watermark('在此填入用户名');
   $('#user-1-name').watermark('在此填入用户名');
   $('#load').click(function(e){
-    _.after(1, calcIntersection);
     $('#loading').css('display','block');
     $('#content').css('display','none');
     $('.user-0-name').text($('#user-0-name').val());
