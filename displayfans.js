@@ -1,20 +1,3 @@
-function loadFans(userNameInput){
-  $.ajax({
-    url: "http://weiboapp.twksos.com/followers_ids.php?name=" + $(userNameInput).val()
-  }).done(function(data) {
-    fans = JSON.parse(data);
-    if(fans.error){
-      alert('错误：'+fans.error);
-    } else {
-      if(fans.next_cursor == 0){
-        $(userNameInput).attr('data-fans',data);
-        calcIntersection();
-      }else {
-        alert('暂不支持5000粉丝以上的用户。');
-      }
-    }
-  });
-}
 function percentage(n){
   return (n*100).toFixed(2)+"%";
 } 
@@ -28,12 +11,16 @@ function calcIntersection(){
     $('#common-fans-user-0-percentage').text(percentage(intersection.length/user0Ids.length));
     $('#common-fans-user-1-percentage').text(percentage(intersection.length/user1Ids.length));
     $('#content').css('display','block');
+    $('#loading').css('display','none');
 }
+
 $(function (){
   $('#user-0-name').watermark('在此填入用户名');
   $('#user-1-name').watermark('在此填入用户名');
-  _.after(1, calcIntersection);
   $('#load').click(function(e){
+    _.after(1, calcIntersection);
+    $('#loading').css('display','block');
+    $('#content').css('display','none');
     $('.user-0-name').text($('#user-0-name').val());
     $('.user-1-name').text($('#user-1-name').val());
     loadFans('#user-0-name');

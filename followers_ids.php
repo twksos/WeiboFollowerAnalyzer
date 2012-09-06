@@ -1,8 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-header('Access-Control-Allow-Headers: X-Requested-With');
-
 session_start();
 include_once( 'config.php' );
 include_once( 'saetv2.ex.class.php' );

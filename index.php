@@ -18,7 +18,8 @@ $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src="jquery.watermark.min.js"></script>
 <script type="text/javascript" src="underscore.js"></script>
-<script type="text/javascript" src="samefans.js"></script>
+<script type="text/javascript" src="loadfans.js"></script>
+<script type="text/javascript" src="displayfans.js"></script>
 </head>
 
 <body>
@@ -33,6 +34,13 @@ if($_SESSION['token']){
     </section>
     <button id='load' type='button'>比较共同粉丝</button>
   </form>
+  <div id='loading'>
+    <div id="block_1" class="barlittle"></div>
+    <div id="block_2" class="barlittle"></div>
+    <div id="block_3" class="barlittle"></div>
+    <div id="block_4" class="barlittle"></div>
+    <div id="block_5" class="barlittle"></div>
+  </div>
   <div id='content'>
     <section><label><span class='user-0-name'></span>的粉丝数量：</label><span id="user-0-fans"></span></section>
     <section><label><span class='user-1-name'></span>的粉丝数量：</label><span id="user-1-fans"></span></section>
