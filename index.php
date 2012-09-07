@@ -45,8 +45,8 @@ if($_SESSION['token']){
     <section><label><span class='user-0-name'></span>的粉丝数量：</label><span id="user-0-fans"></span></section>
     <section><label><span class='user-1-name'></span>的粉丝数量：</label><span id="user-1-fans"></span></section>
     <section><label>共同粉丝数量：</label><span id="common-fans"></span></section>
-    <section><label>共同粉丝数量占<span class='user-0-name'></span>粉丝百分比：</label><span id="common-fans-user-0-percentage"></span></section>
-    <section><label>共同粉丝数量占<span class='user-1-name'></span>粉丝百分比：</label><span id="common-fans-user-1-percentage"></span></section>
+    <section><label><span class='user-0-name'></span>粉丝中有</label><span id="common-fans-user-0-percentage"></span>也关注<span class='user-1-name'></span></section>
+    <section><label><span class='user-1-name'></span>粉丝中有</label><span id="common-fans-user-1-percentage"></span>也关注<span class='user-0-name'></span></section>
   </div>
 <?php
 } else {
