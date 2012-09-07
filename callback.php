@@ -20,7 +20,7 @@ if ($token) {
 	$_SESSION['token'] = $token;
 	setcookie( 'weibojs_'.$o->client_id, http_build_query($token) );
 ?>
-授权完成,<a href="weibolist.php">进入粉丝对比分析器</a><br />
+授权完成,<a href="index.php">进入微博粉丝分析器</a><br />
 <?php
 } else {
 ?>

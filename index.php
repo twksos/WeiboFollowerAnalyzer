@@ -13,7 +13,7 @@ $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Engine</title>
+<title>微博粉丝分析器</title>
 <link href='style.css' rel='stylesheet' type='text/css' />
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src="jquery.watermark.min.js"></script>
