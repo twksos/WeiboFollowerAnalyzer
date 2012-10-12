@@ -1,0 +1,6 @@
+<?php
+header('Content-Type: text/html; charset=UTF-8');
+
+define( "WB_AKEY" , '1678227100' );
+define( "WB_SKEY" , 'weibo app secret key' );
+define( "WB_CALLBACK_URL" , 'http://weiboapp.twksos.com/callback.php' );
